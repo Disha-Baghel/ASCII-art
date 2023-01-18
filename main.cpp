@@ -23,7 +23,8 @@ int main(){
 
     imshow("Display window", image);
 
-    if(waitKey(0) == 27){
-        std::cout<<"Image read successfully"<<std::endl;
-    }
+    waitKey(0);
+    // if(waitKey(0) == 27){
+    //     std::cout<<"Image read successfully"<<std::endl;
+    // }
 }
