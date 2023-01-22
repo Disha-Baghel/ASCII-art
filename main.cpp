@@ -44,9 +44,8 @@ int main(){
     }
     
     for(int i=0; i<image.rows; i++){
-        int n=0;
         for(int j=0; j<image.cols; j++){
-            ascii[i][j] = ASCII[n + (int)brightness[i][j]*3/255];
+            ascii[i][j] = ASCII[(int)brightness[i][j]*ASCII.length()/255];
         }
     }
 
