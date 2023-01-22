@@ -18,7 +18,7 @@ int main(){
         brightness[i] = new int[image.cols];
     }
 
-    String ascii = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
+    String ASCII = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
     int b, g, r, average;
     for(int i=0; i<image.rows;i++){
         for(int j=0; j<image.cols; j++){
@@ -31,9 +31,28 @@ int main(){
         }
     } 
 
+    // for(int i=0; i<image.rows; i++){
+    //     for(int j=0; j<image.cols; j++){
+    //         std::cout<<brightness[i][j];
+    //     }
+    //     std::cout<<std::endl;
+    // }
+
+    char **ascii = new char*[image.rows];
+    for(int i=0; i<image.rows; i++){
+        ascii[i] = new char[image.cols];
+    }
+    
+    for(int i=0; i<image.rows; i++){
+        int n=0;
+        for(int j=0; j<image.cols; j++){
+            ascii[i][j] = ASCII[n + (int)brightness[i][j]*3/255];
+        }
+    }
+
     for(int i=0; i<image.rows; i++){
         for(int j=0; j<image.cols; j++){
-            std::cout<<brightness[i][j];
+            std::cout<<ascii[i][j];
         }
         std::cout<<std::endl;
     }
