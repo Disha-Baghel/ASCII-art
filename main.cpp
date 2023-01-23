@@ -1,10 +1,5 @@
-
-// #include <opencv2/core.hpp>
 #include <opencv4/opencv2/opencv.hpp>
-// #include <opencv2/highgui/highgui.hpp>
 #include <iostream>
-// #include<string.h>
-// #include <stdio.h>
 using namespace cv;
 int main(){
     Mat image = imread("ascii-pineapple.jpg", IMREAD_UNCHANGED);
@@ -30,13 +25,6 @@ int main(){
             brightness[i][j] = average;
         }
     } 
-
-    // for(int i=0; i<image.rows; i++){
-    //     for(int j=0; j<image.cols; j++){
-    //         std::cout<<brightness[i][j];
-    //     }
-    //     std::cout<<std::endl;
-    // }
 
     char **ascii = new char*[image.rows];
     for(int i=0; i<image.rows; i++){
@@ -67,7 +55,4 @@ int main(){
     imshow("Display window", image);
 
     waitKey(0);
-    // if(waitKey(0) == 27){
-    //     std::cout<<"Image read successfully"<<std::endl;
-    // }
 }
